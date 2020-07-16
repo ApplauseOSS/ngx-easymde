@@ -154,7 +154,7 @@ export class EasymdeComponent implements AfterViewInit, OnChanges, OnDestroy, Co
 
   writeValue(value: string): void {
     this.value = value;
-    if (this.instance) {
+    if (this.instance && this.instance.value() !== value) {
       this.instance.value(this.value);
     }
   }
